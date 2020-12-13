@@ -82,7 +82,8 @@
 
         .pregunta-formulario__pregunta:hover,
         .pregunta-formulario__opcion:hover,
-        .add:hover {
+        .inicio-alerta__alerta:hover,
+        .inicio-pregunta__pregunta:hover {
             border: 3px solid black;
             cursor: pointer;
             font-size: 1.2em;
@@ -117,42 +118,48 @@
 
     <div class="formulario">
 
-        <h1>Datos iniciales</h1>
+        <h1>ABM formulario</h1>
+        <p>Objeto > Vivienda > Indicio > Incendio </p>
+
+        <h3>Datos iniciales</h3>
         <div class="inicio-alerta">
             <div class="inicio-alerta__title" style="height: 60px; top: -25px;">Alertas Iniciales</div>
             <div class="inicio-alerta__alertas">
-                <div class="inicio-alerta__alerta">Alerta 1</div>
-                <div class="inicio-alerta__alerta">Alerta 2</div>
-                <div class="inicio-alerta__alerta add" title="Agregar">+</div>
+                <div class="inicio-alerta__alerta" title="Eliminar" onclick="alert('Vale por un dialogo para eliminar')">Alerta 1</div>
+                <div class="inicio-alerta__alerta" title="Eliminar" onclick="alert('Vale por un dialogo para eliminar')">Alerta 2</div>
+                <div class="inicio-alerta__alerta add" title="Agregar" onclick="alert('Vale por un dialogo para crear')">+</div>
             </div>
         </div>
         <div class="inicio-pregunta">
             <div class="inicio-pregunta__title">Pregunta Iniciales</div>
             <div class="inicio-pregunta__preguntas">
-                <div class="inicio-pregunta__pregunta">CodPreg 1</div>
-                <div class="inicio-pregunta__pregunta add" title="Agregar">+</div>
+                <div class="inicio-pregunta__pregunta" title="Eliminar" onclick="alert('Vale por un dialogo para eliminar')">CodPreg 1</div>
+                <div class="inicio-pregunta__pregunta add" title="Agregar" onclick="alert('Vale por un dialogo para crear')">+</div>
             </div>
         </div>
 
-        <hr>
-        <h1>Todas las preguntas</h1>
+        <h3>Todas las preguntas</h3>
         <div class="pregunta-formulario">
-            <div class="pregunta-formulario__pregunta" style="height: 60px; top: -40px;" title="Modificar">codPreg 1</div>
+            <div class="pregunta-formulario__pregunta" style="height: 60px; top: -40px;" title="Modificar" onclick="alert('Vale por un dialogo para modificar')">codPreg 1</div>
             <div class="pregunta-formulario__opciones">
-                <div class="pregunta-formulario__opcion" title="Modificar">opcion 1</div>
-                <div class="pregunta-formulario__opcion" title="Modificar">opcion 2</div>
-                <div class="pregunta-formulario__opcion add" title="Agregar"><b>+</b></div>
+                <div class="pregunta-formulario__opcion" title="Modificar" onclick="alert('Vale por un dialogo para modificar')">opcion 1</div>
+                <div class="pregunta-formulario__opcion" title="Modificar" onclick="alert('Vale por un dialogo para modificar')">opcion 2</div>
+                <div class="pregunta-formulario__opcion add" title="Agregar" onclick="alert('Vale por un dialogo para crear')"><b>+</b></div>
             </div>
         </div>
         <div class="pregunta-formulario">
-            <div class="pregunta-formulario__pregunta" style="height: 60px; top: -25px;" title="Modificar">codPreg 2</div>
+            <div class="pregunta-formulario__pregunta" style="height: 60px; top: -25px;" title="Modificar" onclick="alert('Vale por un dialogo para modificar')">codPreg 2</div>
             <div class="pregunta-formulario__opciones">
-                <div class="pregunta-formulario__opcion" title="Modificar">opcion 1</div>
-                <div class="pregunta-formulario__opcion add" title="Agregar"><b>+</b></div>
+                <div class="pregunta-formulario__opcion" title="Modificar" onclick="alert('Vale por un dialogo para modificar')">opcion 1</div>
+                <div class="pregunta-formulario__opcion add" title="Agregar" onclick="alert('Vale por un dialogo para crear')"><b>+</b></div>
             </div>
         </div>
         <div class="pregunta-formulario">
-            <div class="pregunta-formulario__pregunta add" title="Agregar"><b>+</b></div>
+            <div class="pregunta-formulario__pregunta add" title="Agregar" onclick="alert('Vale por un dialogo para crear')"><b>+</b></div>
+        </div>
+
+        <div>
+            <button style="font-size: 2em;" onclick="alert('Guardado!')">Submit!</button>
         </div>
 
     </div>
