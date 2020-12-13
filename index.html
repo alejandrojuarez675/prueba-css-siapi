@@ -15,44 +15,91 @@
         .formulario {
             margin: 15%;
             --separacion-horizontal: 34px;
+            --color-pregunta: lightcoral;
+            --color-alarma: lightyellow;
+            --color-opcion: lightslategray;
         }
 
+        .inicio-alerta,
+        .inicio-pregunta,
         .pregunta-formulario {
-            position: relative;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
 
-        .pregunta-formulario__pregunta {
+        .inicio-alerta__title,
+        .inicio-pregunta__title {
             position: relative;
             width: 100px;
             display: inline-block;
-            background-color: lightcoral;
             border: 1px solid black;
             text-align: center;
         }
 
-        .pregunta-formulario__pregunta:hover,
-        .pregunta-formulario__opcion:hover {
-            border: 3px solid black;
-            cursor: pointer;
-            font-size: 1.2em;
+        .inicio-alerta__title {
+            background-color: var(--color-alarma);
         }
 
-        .pregunta-formulario__opciones {
+        .inicio-pregunta__title{
+            background-color: var(--color-pregunta);
+        }
+
+        .inicio-alerta__alertas,
+        .inicio-pregunta__preguntas {
             position: relative;
             display: inline-block;
         }
 
-        .pregunta-formulario__opcion {
+        .inicio-alerta__alerta,
+        .inicio-pregunta__pregunta {
             position: relative;
             width: 100px;
-            background-color: lightslategray;
             border: 1px solid black;
             margin-left: var(--separacion-horizontal);
             text-align: center;
         }
 
-        .pregunta-formulario__opcion::before {
+        .inicio-alerta__alerta {
+            background-color: var(--color-alarma);
+        }
+
+        .inicio-pregunta__pregunta {
+            background-color: var(--color-pregunta);
+        }
+
+
+        .pregunta-formulario__pregunta,
+        .pregunta-formulario__opciones {
+            position: relative;
+            display: inline-block;
+        }
+
+        .pregunta-formulario__pregunta {
+            width: 100px;
+            background-color: var(--color-pregunta);
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .pregunta-formulario__pregunta:hover,
+        .pregunta-formulario__opcion:hover,
+        .add:hover {
+            border: 3px solid black;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .pregunta-formulario__opcion {
+            position: relative;
+            width: 100px;
+            background-color: var(--color-opcion);
+            border: 1px solid black;
+            margin-left: var(--separacion-horizontal);
+            text-align: center;
+        }
+
+        .pregunta-formulario__opcion::before,
+        .inicio-alerta__alerta::before,
+        .inicio-pregunta__pregunta::before {
             content: "";
             display: inline-block;
             width: var(--separacion-horizontal);
@@ -62,26 +109,50 @@
             top: 10px;
             left: calc(-1 * var(--separacion-horizontal));
         }
+
+        .add {
+            font-size: 1.2em;
+        }
     </style>
 
     <div class="formulario">
+
+        <h1>Datos iniciales</h1>
+        <div class="inicio-alerta">
+            <div class="inicio-alerta__title" style="height: 60px; top: -25px;">Alertas Iniciales</div>
+            <div class="inicio-alerta__alertas">
+                <div class="inicio-alerta__alerta">Alerta 1</div>
+                <div class="inicio-alerta__alerta">Alerta 2</div>
+                <div class="inicio-alerta__alerta add" title="Agregar">+</div>
+            </div>
+        </div>
+        <div class="inicio-pregunta">
+            <div class="inicio-pregunta__title">Pregunta Iniciales</div>
+            <div class="inicio-pregunta__preguntas">
+                <div class="inicio-pregunta__pregunta">Pregunta 1</div>
+                <div class="inicio-pregunta__pregunta add" title="Agregar">+</div>
+            </div>
+        </div>
+
+        <hr>
+        <h1>Todas las preguntas</h1>
         <div class="pregunta-formulario">
-            <div class="pregunta-formulario__pregunta" style="height: 140px;" title="Modificar">codPreg 1</div>
+            <div class="pregunta-formulario__pregunta" style="height: 60px; top: -40px;" title="Modificar">codPreg 1</div>
             <div class="pregunta-formulario__opciones">
-                <div class="pregunta-formulario__opcion" style="top: 50px;" title="Modificar">opcion 1</div>
-                <div class="pregunta-formulario__opcion" style="top: 80px;" title="Modificar">opcion 2</div>
-                <div class="pregunta-formulario__opcion" style="top: 110px; font-size: 1.22em;" title="Agregar"><b>+</b></div>
+                <div class="pregunta-formulario__opcion" title="Modificar">opcion 1</div>
+                <div class="pregunta-formulario__opcion" title="Modificar">opcion 2</div>
+                <div class="pregunta-formulario__opcion add" title="Agregar"><b>+</b></div>
             </div>
         </div>
         <div class="pregunta-formulario">
-            <div class="pregunta-formulario__pregunta" style="height: 100px;" title="Modificar">codPreg 1</div>
+            <div class="pregunta-formulario__pregunta" style="height: 60px; top: -25px;" title="Modificar">codPreg 1</div>
             <div class="pregunta-formulario__opciones">
-                <div class="pregunta-formulario__opcion" style="top: 30px;" title="Modificar">opcion 1</div>
-                <div class="pregunta-formulario__opcion" style="top: 60px; font-size: 1.2em;" title="Agregar"><b>+</b></div>
+                <div class="pregunta-formulario__opcion" title="Modificar">opcion 1</div>
+                <div class="pregunta-formulario__opcion add" title="Agregar"><b>+</b></div>
             </div>
         </div>
         <div class="pregunta-formulario">
-            <div class="pregunta-formulario__pregunta" style="height: 100px; font-size: 1.2em;" title="Agregar"><b>+</b></div>
+            <div class="pregunta-formulario__pregunta add" title="Agregar"><b>+</b></div>
         </div>
 
     </div>
