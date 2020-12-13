@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>prueba-css</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .formulario {
+            margin: 15%;
+            --separacion-horizontal: 34px;
+        }
+
+        .pregunta-formulario {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .pregunta-formulario__pregunta {
+            position: relative;
+            width: 100px;
+            display: inline-block;
+            background-color: lightcoral;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .pregunta-formulario__pregunta:hover,
+        .pregunta-formulario__opcion:hover {
+            border: 3px solid black;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .pregunta-formulario__opciones {
+            position: relative;
+            display: inline-block;
+        }
+
+        .pregunta-formulario__opcion {
+            position: relative;
+            width: 100px;
+            background-color: lightslategray;
+            border: 1px solid black;
+            margin-left: var(--separacion-horizontal);
+            text-align: center;
+        }
+
+        .pregunta-formulario__opcion::before {
+            content: "";
+            display: inline-block;
+            width: var(--separacion-horizontal);
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            top: 10px;
+            left: calc(-1 * var(--separacion-horizontal));
+        }
+    </style>
+
+    <div class="formulario">
+        <div class="pregunta-formulario">
+            <div class="pregunta-formulario__pregunta" style="height: 140px;" title="Modificar">codPreg 1</div>
+            <div class="pregunta-formulario__opciones">
+                <div class="pregunta-formulario__opcion" style="top: 50px;" title="Modificar">opcion 1</div>
+                <div class="pregunta-formulario__opcion" style="top: 80px;" title="Modificar">opcion 2</div>
+                <div class="pregunta-formulario__opcion" style="top: 110px; font-size: 1.22em;" title="Agregar"><b>+</b></div>
+            </div>
+        </div>
+        <div class="pregunta-formulario">
+            <div class="pregunta-formulario__pregunta" style="height: 100px;" title="Modificar">codPreg 1</div>
+            <div class="pregunta-formulario__opciones">
+                <div class="pregunta-formulario__opcion" style="top: 30px;" title="Modificar">opcion 1</div>
+                <div class="pregunta-formulario__opcion" style="top: 60px; font-size: 1.2em;" title="Agregar"><b>+</b></div>
+            </div>
+        </div>
+        <div class="pregunta-formulario">
+            <div class="pregunta-formulario__pregunta" style="height: 100px; font-size: 1.2em;" title="Agregar"><b>+</b></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
